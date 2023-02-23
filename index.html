@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <script>
+
+function checkLine(line) {
+    const sameLettersObj = {};
+    const countOccurArr = line.split("").map((char) =>
+        sameLettersObj [char] = sameLettersObj [char] + 1 || 1
+        )
+    const getmatchLines =  Object.keys(sameLettersObj).filter(
+        (char) => sameLettersObj [char] === 2).length > 0;
+
+    return getmatchLines;
+};
+
+function findDouble(lines) {
+    const linesArr = lines.split(/\r?\n/); 
+    const resultArr = linesArr.filter((line) => checkLine(line))
+    
+    return resultArr;
+}
+
+findDouble("asdf\nfdas\nasds\nd fm\ndfaa\naaaa\naabb\naaabb")
+   </script> 
+</body>
+</html>
